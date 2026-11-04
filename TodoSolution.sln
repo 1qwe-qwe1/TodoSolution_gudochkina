@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{0F61CBB1-D5C2-4DC9-83FC-18C774F29FD9}"
 	ProjectSection(SolutionItems) = preProject
 		ci.yml = ci.yml
+		publish-package.yml = publish-package.yml
 	EndProjectSection
 EndProject
 Global
