@@ -1,4 +1,6 @@
-﻿namespace Todo.Core
+﻿using System.Text.Json.Serialization;
+
+namespace Todo.Core
 {
     public class TodoItem
     {
@@ -6,6 +8,13 @@
         public string Title { get; private set; }
         public bool IsDone { get; private set; }
 
+        [JsonConstructor]
+        public TodoItem(Guid id, string title, bool isDone)
+        {
+            Id = id;
+            Title = title?.Trim() ?? throw new ArgumentNullException(nameof(title));
+            IsDone = isDone;
+        }
         public TodoItem(string title)
         {
             Title = title?.Trim() ?? throw new ArgumentNullException(nameof(title));
